@@ -1,0 +1,15 @@
+.banner {
+  background-image: url("../images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+}
+
+h1 {
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,20 @@
+$color-primary: #472f38;
+$color-secondary:#a368bd;
+$color-tercary:#d78842;
+$color-backgroundLight:#f3e9f1;
+$color-backgroundGrey: #847c84;
+
+%shadow {
+    box-shadow: 0px 3px 5px #3838382e ;
+}
+
+%shadow-darken {
+    box-shadow: 0px 3px 5px gray;
+}
+
+%size-box1{
+    border-radius: 1rem;
+    height: 65px;
+    margin: 1.3rem 1.5rem 1.3rem 1.5rem;
+    @extend %shadow;
+}

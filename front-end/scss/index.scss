@@ -1,0 +1,97 @@
+
+
+
+main{
+    background-color: $color-backgroundLight;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.banner{
+    background-image: url("../images/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 25rem;
+
+
+}
+
+h1{
+    color:black;
+    font-family: 'Merienda One', cursive;
+    padding-top: 2rem;
+}
+
+
+img{
+    width: 100%;
+}
+
+.header{
+    background-color: black;
+    &__logo{
+        font-family: 'Merienda One', cursive;
+    }
+}
+
+.btn_principal{
+    width: 10rem;
+    @include button-principal;
+    
+}
+
+.aside-function{
+
+    &__box{
+        @extend %size-box1;
+        background-color: $color-backgroundGrey;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: white;
+        
+        & span{
+            @include small-number;
+        }
+
+        & p{
+            padding-top:1rem;
+            padding-left:0.5rem;
+        }
+       
+    }
+}
+
+@media screen and (min-width:765px){
+    .aside-function{
+        display: flex;
+        position: relative;
+    }
+    .aside-function__box{
+        padding-right: 1rem;
+    }
+}
+
+
+#list-camera{
+    display: flex;
+    justify-content: space-between;
+    
+    width:auto;
+   
+}
+
+.camera_content{
+    padding-left:1rem;
+    padding-right: 1rem;    
+}
+
+.camera_description{
+    text-decoration: none;
+    
+}
+
+.camera_actionbox{
+    @include button-principal;
+
+}
+

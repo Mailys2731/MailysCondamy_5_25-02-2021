@@ -1,10 +1,10 @@
 //axios
 
-main ()
+main()
 
 async function main() {
-    detailCameraProd ()
-    
+    detailCameraProd();
+
 }
 
 //Lien avec l'API
@@ -27,47 +27,58 @@ function getCamera(id) {
         })
 }
 
-async function detailCameraProd () {
+async function detailCameraProd() {
 
     const queryString = window.location.search;
-    console.log (queryString);
+    console.log(queryString);
 
-    const urlParams = new URLSearchParams (queryString);
-    console.log (urlParams);
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams);
 
     const id = urlParams.get('id');
     console.log(id);
 
-    //console.log(detailProduct)
-
-
-    //Element section product html
-
     const detailCamera = await getCamera(id);
-    console.log(detailCamera)
+    console.log(detailCamera);
 
-    const detailProduct = document.getElementById("product");
+    document.getElementById('cardContainer').innerHTML += `
 
+        <div class="detailCard__pictureBox">
+            <img class="detailCard__picture" alt="Photo de la caméra" src=${detailCamera.imageUrl}>
+        </div>
+        <div class="detailCard__descriptionBox">
+            <h2 class= "detailCard__name">${detailCamera.name}</h2>
+            <p class="detailCard__description">${detailCamera.description}</p>
+            <p class="detailCard__price">${detailCamera.price / 100 + " euros"}</p>
+        </div>
+        <label for="option">Choisissez votre lentille:</label>
+            <select name="option" id="choiceLenses">
+                <option disabled value="" selected>Choix lentille</option>
+            </select>`
 
-    let detailContent = document.createElement("article");
-    let detailPicturebox = document.createElement("div");
-    let detailPicture = document.createElement("img");
-    let detailDesrciption = document.createElement("div");
-    let detailName = document.createElement("h2");
-    let detailPrice = document.createElement("p");
-    let detailText = document.createElement("p");
-    
+    detailCamera.lenses.forEach(camera => {
+        let choiceOption = document.createElement("Option");
+        document
+            .getElementById("choiceLenses")
+            .appendChild(choiceOption).innerHTML = camera;
 
-    detailContent.setAttribute("class", "detail_content");
-    detailPicturebox.setAttribute("class", "detail_picturebox");
-    detailPicture.setAttribute("alt", "photo de la caméra");
-    detailDesrciption.setAttribute("class", "detail_description");
-    detailName.setAttribute("class", "detail_name");
-    detailPrice.setAttribute("class", "detail_price");
-    detailText.setAttribute("class", "detail_text");
-
-    detailPicture.src(camera.imageUrl)
-    detailName.textContent(camera.name)
-    detailPrice.textContent(camera.price / 100 + " euros")
-
+    });
 }
+
+
+/*const detailPicture = document.getElementsByClassName('detailCard__picture');
+const detailDescription = document.getElementsByClassName('detailCard__description');
+const detailName = document.getElementsByClassName('detailCard__name');
+const detailPrice = document.getElementsByClassName('detailCard__price');
+
+detailPicture.src = detailCamera.imageUrl;
+console.log(detailPicture);
+detailDescription.innerHtml = detailCamera.description;
+console.log(detailDescription)
+detailName.textContent = detailCamera.name;
+console.log(detailName)
+detailPrice.textContent = detailCamera.price /100 +" euros";
+console.log(detailPrice)
+*/
+
+

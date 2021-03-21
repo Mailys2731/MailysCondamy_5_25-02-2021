@@ -6,7 +6,7 @@
     padding: 0 20px 0 20px;
     border-radius: 0.5rem;
     margin: 0.5rem;
-    background-color: black;
+    background-color:$green;
     @extend %shadow;
   
     & a{
@@ -24,18 +24,3 @@
         
     }
 }
-
-@mixin small-number{
-    background-color: $color-tercary;
-    border-radius: 100%;
-    height: 20px;
-    width:20px;
-    color:white;
-    display:flex ;
-    justify-content: center;
-    align-items: center;
-    margin-left:-25px;
-    font-weight: normal;
-    font-size: 15px;    
-}
-

@@ -22,7 +22,11 @@ function getCamera(id) {
         })
 
         .catch(function (error) {
-            alert(error)
+            (Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "Quelque chose c'est mal passé !",
+              }))
             return undefined;
         })
 }
@@ -44,18 +48,18 @@ async function detailCameraProd() {
     document.getElementById('cardContainer').innerHTML += `
 
         <div class="detailCard__pictureBox">
-            <img class="detailCard__picture" alt="Photo de la caméra" src=${detailCamera.imageUrl}>
+            <img class="detailCard__picture" alt="Photo de la camera" src=${detailCamera.imageUrl}>
         </div>
-        <div class="detailCard__descriptionBox">
+        <div class="detailCard__descriptionBox p-3">
             <h2 class= "detailCard__name">${detailCamera.name}</h2>
-            <p class="detailCard__description">${detailCamera.description}</p>
-            <p class="detailCard__price">${detailCamera.price / 100 + " euros"}</p>
-        </div>
+            <p class="detailCard__description text-justify">${detailCamera.description}</p>
+            <p class="detailCard__price font-weight-bold">${detailCamera.price / 100 + " euros"}</p>
+        
         <label for="option">Choisissez votre lentille:</label>
             <select name="option" id="choiceLenses">
-                <option disabled value="" selected>Choix lentille</option>
-            </select>`
-
+                <option disabled value=""lentille</option>
+            </select>
+            </div>`
     detailCamera.lenses.forEach(camera => {
         let choiceOption = document.createElement("Option");
         document
@@ -63,6 +67,8 @@ async function detailCameraProd() {
             .appendChild(choiceOption).innerHTML = camera;
 
     });
+
+    
 }
 
 

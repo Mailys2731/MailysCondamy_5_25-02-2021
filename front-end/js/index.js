@@ -26,7 +26,12 @@ function getCameras() {
         })
 
         .catch(function (error) {
-            alert(error)
+            (Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "Une erreur interne s'est produite !",
+                type:"success",
+            }))
             return []
         })
 }
@@ -42,7 +47,7 @@ async function displayCamera(camera) {
     const listCamera = document.getElementById('list-camera');
 
     //Structure index.html
-
+    let cameraContentbox = document.createElement("div");
     let cameraContent = document.createElement("article");
     let cameraDescription = document.createElement("div");
     let cameraPicturebox = document.createElement("div");
@@ -51,19 +56,19 @@ async function displayCamera(camera) {
     let cameraPrice = document.createElement("p");
     let cameraActionBox = document.createElement("div");
     let cameraAction = document.createElement("a")
-   
+
 
     //Attributs balises html
-
-    cameraContent.setAttribute("class", "camera_content card shadow my-3 col-md-6 px-0 ");
+    cameraContentbox.setAttribute("class", "camera_contentbox col-md-6 col-lg-4 px-0")
+    cameraContent.setAttribute("class", "camera_content shadow");
     cameraDescription.setAttribute("class", "camera_description px-2");
     cameraPicturebox.setAttribute("class", "camera_picturebox card-img-top");
     cameraPicture.setAttribute("alt", "Photo de la caméra");
     cameraName.setAttribute("class", "camera_name card-title");
     cameraPrice.setAttribute("class", "cameraPrice card-text");
-    cameraActionBox.setAttribute("class", "camera_actionbox");
+    cameraActionBox.setAttribute("class", "camera_actionbox button-effect");
     cameraAction.setAttribute("href", "product.html?id=" + camera._id);
-    cameraAction.setAttribute("class","camera_action btn")
+    cameraAction.setAttribute("class", "camera_action btn")
 
     //contenu des balises
 
@@ -74,7 +79,8 @@ async function displayCamera(camera) {
 
     //Agencement des élèments 
 
-    listCamera.appendChild(cameraContent);
+    listCamera.appendChild(cameraContentbox);
+    cameraContentbox.append(cameraContent);
     cameraContent.appendChild(cameraPicturebox);
     cameraPicturebox.appendChild(cameraPicture);
     cameraContent.appendChild(cameraDescription);
@@ -83,4 +89,4 @@ async function displayCamera(camera) {
     cameraDescription.appendChild(cameraActionBox);
     cameraActionBox.appendChild(cameraAction)
 }
-
+//es6?

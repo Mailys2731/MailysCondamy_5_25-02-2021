@@ -26,29 +26,15 @@ img{
     }
 }
 
-.btn_principal{
-    width: 10rem;
-    @include button-principal;
-    
-}
-
-
-
-
 .camera_content{
     margin: 1rem;
     border: solid 1px $pink;
 }
 
-
-
-
-
 .camera_description{
     text-decoration: none;
     
 }
-
 
 .camera_actionbox{
     @include button-principal;
@@ -62,3 +48,6 @@ img{
     border: solid 1px $pink;
 }
 
+.buttonCart__box{
+    @include button-principal;
+}

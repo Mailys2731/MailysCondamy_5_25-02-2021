@@ -7,12 +7,10 @@ async function main() {
     cameras.forEach((camera) => {
         displayCamera(camera);
     });
-
 }
 
 
 //Lien avec l'API
-
 function getCameras() {
 
     return fetch("http://localhost:3000/api/cameras")
@@ -31,6 +29,7 @@ function getCameras() {
                 title: 'Oops...',
                 text: "Une erreur interne s'est produite !",
                 type:"success",
+            
             }))
             return []
         })
@@ -40,10 +39,8 @@ function getCameras() {
 
 async function displayCamera(camera) {
 
-    //const cameras = await getCameras()
 
     //Lien avec la page HTML
-
     const listCamera = document.getElementById('list-camera');
 
     //Structure index.html
@@ -57,9 +54,19 @@ async function displayCamera(camera) {
     let cameraActionBox = document.createElement("div");
     let cameraAction = document.createElement("a")
 
+    //Agencement des élèments
+    listCamera.appendChild(cameraContentbox);
+    cameraContentbox.appendChild(cameraContent);
+    cameraContent.appendChild(cameraPicturebox);
+    cameraPicturebox.appendChild(cameraPicture);
+    cameraContent.appendChild(cameraDescription);
+    cameraDescription.appendChild(cameraName);
+    cameraDescription.appendChild(cameraPrice);
+    cameraDescription.appendChild(cameraActionBox);
+    cameraActionBox.appendChild(cameraAction)
 
     //Attributs balises html
-    cameraContentbox.setAttribute("class", "camera_contentbox col-md-6 col-lg-4 px-0")
+    cameraContentbox.setAttribute("class", "camera_contentbox col-md-6 col-lg-4 px-0");
     cameraContent.setAttribute("class", "camera_content shadow");
     cameraDescription.setAttribute("class", "camera_description px-2");
     cameraPicturebox.setAttribute("class", "camera_picturebox card-img-top");
@@ -71,22 +78,17 @@ async function displayCamera(camera) {
     cameraAction.setAttribute("class", "camera_action btn")
 
     //contenu des balises
-
     cameraPicture.src = camera.imageUrl;
     cameraName.textContent = camera.name;
     cameraPrice.textContent = camera.price / 100 + " euros";
     cameraAction.textContent = "En savoir plus";
 
-    //Agencement des élèments 
-
-    listCamera.appendChild(cameraContentbox);
-    cameraContentbox.append(cameraContent);
-    cameraContent.appendChild(cameraPicturebox);
-    cameraPicturebox.appendChild(cameraPicture);
-    cameraContent.appendChild(cameraDescription);
-    cameraDescription.appendChild(cameraName);
-    cameraDescription.appendChild(cameraPrice);
-    cameraDescription.appendChild(cameraActionBox);
-    cameraActionBox.appendChild(cameraAction)
 }
-//es6?
+
+
+/*axios({
+    method: 'GET',
+    url: "http://localhost:3000/api/camera"
+}).then((response) => console.log(response.data)).catch((e) => console.log(JSON.stringify(e)))
+*/
+

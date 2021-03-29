@@ -23,6 +23,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 
 
@@ -51,7 +52,22 @@
 
         <div class="container d-flex justify-content-center">
             <div id="cardContainer" class="w-75 my-5 shadow">
+                <div id="detailCard__pictureBox">
+                    <img id="detailCard__picture" alt="Photo de la camera" src="">
+                </div>
+                <div id="detailCard__descriptionBox" class="p-3">
+                    <h2 id="detailCard__name"></h2>
+                    <p id="detailCard__description" class="text-justify"></p>
+                    <p id="detailCard__price" class="font-weight-bold"></p>
 
+                    <label for="option">Choisissez votre lentille:</label>
+                    <select name="option" id="choiceLenses">
+                        <option disabled value="" selected>lentilles</option>
+                    </select>
+                </div>
+                <div class="buttonCart__box">
+                    <button class="buttonCart btn" id="AddToCart">Ajouter au panier</button>
+                </div>
             </div>
 
         </div>

@@ -48,6 +48,18 @@ img{
     border: solid 1px $pink;
 }
 
-.buttonCart__box{
+.buttonAddCart__box {
+    @include button-principal;
+}
+
+.buttonCutCart__box{
+    @include button-principal;
+}
+
+.buttonContinue{
+    @include button-principal;
+}
+
+.buttonOrder__box{
     @include button-principal;
 }

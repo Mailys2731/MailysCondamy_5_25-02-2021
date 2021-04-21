@@ -1,1 +1,208 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+.camera_actionbox, .buttonAddCart__box, .buttonCutCart__box, .buttonContinue, .buttonOrder__box {
+  -webkit-box-shadow: 0px 3px 5px #3838382e;
+          box-shadow: 0px 3px 5px #3838382e;
+}
+
+.camera_actionbox:hover, .buttonAddCart__box:hover, .buttonCutCart__box:hover, .buttonContinue:hover, .buttonOrder__box:hover {
+  -webkit-box-shadow: 0px 3px 5px gray;
+          box-shadow: 0px 3px 5px gray;
+}
+
+main {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: black;
+  font-family: 'Merienda One', cursive;
+  padding-top: 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+.header {
+  background-color: #2F3020;
+}
+
+.header__logo {
+  font-family: 'Merienda One', cursive;
+}
+
+.camera_content {
+  margin: 1rem;
+  border: solid 1px #D96848;
+}
+
+.camera_description {
+  text-decoration: none;
+}
+
+.camera_actionbox {
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 0 20px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background-color: #596235;
+}
+
+.camera_actionbox a {
+  color: white;
+}
+
+.camera_actionbox:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.camera_actionbox:hover a {
+  color: white;
+}
+
+#cardContainer {
+  max-width: 30rem;
+  border: solid 1px #D96848;
+}
+
+.buttonAddCart__box {
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 0 20px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background-color: #596235;
+}
+
+.buttonAddCart__box a {
+  color: white;
+}
+
+.buttonAddCart__box:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.buttonAddCart__box:hover a {
+  color: white;
+}
+
+.buttonCutCart__box {
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 0 20px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background-color: #596235;
+}
+
+.buttonCutCart__box a {
+  color: white;
+}
+
+.buttonCutCart__box:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.buttonCutCart__box:hover a {
+  color: white;
+}
+
+.buttonContinue {
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 0 20px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background-color: #596235;
+}
+
+.buttonContinue a {
+  color: white;
+}
+
+.buttonContinue:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.buttonContinue:hover a {
+  color: white;
+}
+
+.buttonOrder__box {
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 0 20px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  background-color: #596235;
+}
+
+.buttonOrder__box a {
+  color: white;
+}
+
+.buttonOrder__box:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.buttonOrder__box:hover a {
+  color: white;
+}
+
+.camera_contentbox {
+  border: solid 1px #D96848;
+}
+
+input:invalid {
+  border: 1px solid #D96848;
+}
+
+input:valid {
+  border: 1px solid #596235;
+}
+/*# sourceMappingURL=main.css.map */

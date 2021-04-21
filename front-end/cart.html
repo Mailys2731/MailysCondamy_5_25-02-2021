@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <title>Orinoco</title>
     <meta charset="UTF-8">
@@ -23,8 +24,9 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
+    <script src="https://kit.fontawesome.com/977411349e.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="header container">
 
@@ -34,43 +36,62 @@
 
     </header>
 
-    <main class="container">
+    <main class="container d-flex flex-column align-items-center">
 
-        <h2>Récapitulatif de votre panier d'achat</h2>
+        <h1 class="titleCart">Récapitulatif de votre panier d'achat:</h1>
 
-        <div id="board-cart">
-            <p id="panierVide">Votre panier est vide</p>
+        <section id="board" class="row">
+
+            <div id="panierVide_box" class="panierVide col-12 d-flex justify-content-center">
+                <p id="panierVide" class="d-none"><i class="fas fa-window-close iconVide"></i> Votre panier est vide</p>
+            </div>
+
+            <div id="board-cart">
+            </div>
+
+            <div id="totalBox"></div>
+        </section>
+
+      
+
         </div>
-        <div class ="buttonContinue">
-            <a class ="btn" href="index.html"> Continuer mes achats </a>
+
+        <div class="buttonContinue">
+            <a class="btn" href="index.html"> Continuer mes achats </a>
         </div>
 
-        <div class="row">
-            <form class= "d-flex flex-column justify-content-center col-11 mx-auto">
+        <section id="form" class="row">
+            <form name="formOrder" class="d-flex flex-column justify-content-center col-11 mx-auto">
 
                 <label for="firstName">Prénom:</label>
-                <input type="text" id="firstName" name="firstName">
+                <input type="text" name="firstName" required maxlength="20">
 
                 <label for="lastName">Nom:</label>
-                <input type="text" id="lastName" name="lastName">
+                <input type="text" name="lastName" required maxlength="30">
 
                 <label for="address">Adresse:</label>
-                <input type="text" id="address" name="address">
+                <input type="text" name="address" required maxlength="100">
 
                 <label for="city">Ville:</label>
-                <input type="text" id="city" name="city">
+                <input type="text" name="city" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-            </form>
+                <input type="email" id="email" name="email" required>
 
-            <div class="buttonOrder__box  col-11 mx-auto" >
-                <button class="buttonOrder btn text-white"  id="startOrder">Commander</button>
-            </div>
-        </div>
+                <div class="buttonOrder__box  col-11 mx-auto">
+                    <button class="buttonOrder btn text-white" id="startOrder" type="button">Commander</button>
+                </div>
+            </form>
+        </section>
     </main>
 
+    <footer>
+        <div class="footer d-flex justify-content-center ">
+            <p class="text-white my-4">Mentions légales</p>
+        </div>
+    </footer>
 
-
+    <script type="text/javascript" src="/front-end/js/cart.js"></script>
 </body>
+
 </html>

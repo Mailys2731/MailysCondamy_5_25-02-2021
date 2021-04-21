@@ -24,12 +24,10 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-
-
-
+    <script src="https://kit.fontawesome.com/977411349e.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-light">
+<body>
     <header class="header container">
 
         <nav class="header__navbar row navbar navbar-expand-xl navbar-dark">
@@ -48,39 +46,19 @@
 
     </header>
 
-    <main id="main">
+<main>
+    <section id="orderCongrate">
+        <h1>Félicitations !</h1>
+        <h2>Votre commande a été passée avec succès</h2>
+    </section>
+</main>
 
-        <div class="container d-flex justify-content-center">
-            <div id="cardContainer" class="w-75 my-5 shadow">
-                <div id="detailCard__pictureBox">
-                    <img id="detailCard__picture" alt="Photo de la camera" src="">
-                </div>
-                <div id="detailCard__descriptionBox" class="p-3">
-                    <h2 id="detailCard__name"></h2>
-                    <p id="detailCard__description" class="text-justify"></p>
-                    <p id="detailCard__price" class="font-weight-bold"></p>
-
-                    <label for="option">Choisissez votre lentille:</label>
-                    <select name="option" id="choiceLenses">
-                        <option disabled value="" selected>lentilles</option>
-                    </select>
-                </div>
-                <div class="buttonAddCart__box">
-                    <button class="buttonCart btn text-white" id="addToCart">Ajouter au panier</button>
-                </div>
-                <div class="buttonCutCart__box">
-                    <button class="buttonCart btn text-white" id="cutToCart">Retirer du panier</button>
-                </div>
-            </div>
-
-        </div>
-    </main>
     <footer>
         <div class="footer d-flex justify-content-center ">
             <p class="text-white my-4">Mentions légales</p>
         </div>
     </footer>
-    <script type="text/javascript" src="/front-end/js/product.js"></script>
+
 </body>
 
 </html>

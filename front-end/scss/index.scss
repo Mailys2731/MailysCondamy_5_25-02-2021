@@ -1,22 +1,26 @@
 
-
-
 main{
 
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
-h1{
-    color:black;
-    font-family: 'Merienda One', cursive;
-    padding-top: 2rem;
-}
-
-
 img{
     width: 100%;
+}
+
+.h1_index{
+    font-size: 2.2rem;
+    margin-top:2rem;
+    text-align: center;
+    color:$darkgreen;
+}
+
+.h2_index{
+    font-size: 1.2rem;
+    text-align: center;
+    color: $darkgreen;
+    margin-top:1rem;
+
 }
 
 .header{
@@ -25,6 +29,11 @@ img{
         font-family: 'Merienda One', cursive;
     }
 }
+
+#list-camera{
+    margin-top: 0px;
+}
+
 
 .camera_content{
     margin: 1rem;
@@ -62,4 +71,125 @@ img{
 
 .buttonOrder__box{
     @include button-principal;
+}
+
+//cart
+
+.buttonCutCart2__box{
+    @include button-principal;
+    background-color: $pink;
+    color:white;
+    align-self: flex-end;
+    & p {
+        margin-bottom:0px;
+    }  
+}
+
+
+
+
+
+#board{
+max-width:100%;
+justify-content: flex-end;
+}
+
+.titleCart{
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.camera_contentboxcart{
+    border: solid 1px $pink;
+}
+
+
+#panierVide{
+    font-size: 1.5rem;
+    border: 3px solid $darkgreen;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-right: 2rem;
+    padding-left:2rem;
+    padding-bottom: 1rem;;
+}
+
+.iconVide{
+    color: $pink;
+    font-size: 2rem;
+    margin-top:1rem;
+}
+
+
+@media screen and (max-width:750px) {
+
+    .titleCart{
+        font-size: 1.5rem;
+    }
+    
+    .buttonCutCart2_box{
+       max-width: min-content;
+    }
+    .buttonCutCartText{
+        display: none;
+    }
+    
+}
+
+
+
+@media screen and (min-width:750px){
+
+        #board{
+            width: 75%;
+            display: flex;
+            align-items: center;
+        }
+
+        .camera_name{
+            font-size: 1.5rem;
+        }
+
+        .buttonCutCartIcon{
+            display:none;
+        }
+    }
+
+
+
+.displayTotal{
+    font-weight: bold;
+    font-size:1.2rem;
+}
+
+#form{
+    width:100%;
+    max-width: 50rem;
+    margin-top:2rem;
+}
+
+input:invalid {
+    border: 1px solid $pink;
+}
+  
+input:valid {
+    border: 1px solid $green;
+}
+
+
+//footer
+.footer{
+    background-color: $darkgreen;
+    height:10rem;
+    margin-top:4rem;
+}
+
+//Order
+
+#orderCongrate{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin:4rem;
+
 }

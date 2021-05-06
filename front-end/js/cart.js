@@ -51,7 +51,7 @@ let total = undefined;
 
 
 //Fonction affichage des articles du panier d'achat
-const displayCart = async (cart) => {
+const displayCart = async () => {
     for (let i = 0; i < cart.length; i++) {
         try {
             let id = cart[i];
@@ -115,15 +115,22 @@ const displayCart = async (cart) => {
                 console.log(cart);
 
                 dataCameras = dataCameras.filter((c) => {
-                    if (c.id === id) {
+                    if (c._id === id) {
                         camera = c;
                         return false;
                     }
                     return true;
                 })
+                
                 if (total != 0) {
                     total -= camera.price / 100;
                     document.querySelector("#totalBox p").innerHTML = "Total de votre panier : " + total + "€";
+                }
+
+                if (total === 0) {
+                    displayTotal.setAttribute("class", "d-none");
+                    var emptyCart = document.getElementById("panierVide");
+                    emptyCart.setAttribute("class", "d-inline");
                 }
 
                 var nodeCamera = document.getElementById(id);
@@ -261,13 +268,13 @@ const pushOrder = async (data) => {
 }
 
 const submitOrder = async () => {
-    if (cart.length === 0){
+    if (cart.length === 0) {
         (Swal.fire({
             icon: 'warning',
             title: 'Oops...',
             text: "Votre panier est vide !",
-            confirmButtonText: "Retour à la page d'accueil", 
-        }) .then(function() {
+            confirmButtonText: "Retourner à la page d'accueil",
+        }).then(function () {
             window.location = "index.html";
         }));
 
@@ -288,7 +295,7 @@ const submitOrder = async () => {
     if (formValid(contact)) {
         console.log("ok")
         pushOrder(data);
-      }
+    }
 }
 
 

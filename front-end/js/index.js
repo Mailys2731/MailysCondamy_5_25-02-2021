@@ -29,7 +29,6 @@ const getCameras = async() => {
 
 const displayCamera = async(camera) => {
 
-
     //récupération des données de l'API
     const cameras = await getCameras();
     console.log(cameras)
@@ -64,7 +63,7 @@ const displayCamera = async(camera) => {
         cameraActionBox.appendChild(cameraAction)
 
         //Attributs balises html
-        cameraContentbox.setAttribute("class", "camera_contentbox col-md-6 col-lg-4 px-0");
+        cameraContentbox.setAttribute("class", "camera_contentbox col-md-6 col-lg-4 px-0 h-100");
         cameraContent.setAttribute("class", "camera_content shadow");
         cameraDescription.setAttribute("class", "camera_description px-2");
         cameraPicturebox.setAttribute("class", "camera_picturebox card-img-top");
@@ -73,7 +72,7 @@ const displayCamera = async(camera) => {
         cameraPrice.setAttribute("class", "cameraPrice card-text");
         cameraActionBox.setAttribute("class", "camera_actionbox button-effect");
         cameraAction.setAttribute("href", "product.html?id=" + camera._id);
-        cameraAction.setAttribute("class", "camera_action btn")
+        cameraAction.setAttribute("class", "camera_action btn");
 
         //Contenu interractif des balises
         cameraPicture.src = camera.imageUrl;
@@ -81,16 +80,10 @@ const displayCamera = async(camera) => {
         cameraPrice.textContent = camera.price / 100 + " euros";
         cameraAction.textContent = "En savoir plus";
     });
-
 }
 
 //Exécution de la fonction d'affichage de la liste des produits
 
 displayCamera();
-console.log(getCameras);
 
-/*axios({
-    method: 'GET',
-    url: "http://localhost:3000/api/camera"
-}).then((response) => console.log(response.data)).catch((e) => console.log(JSON.stringify(e)))
-*/
+

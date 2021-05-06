@@ -59,14 +59,12 @@ const displayCart = async (cart) => {
             console.log(camera);
             //ajout des caméras présentent dans le panier à la liste pour le calcul du total
             dataCameras.push(camera);
-            //ajout des ID des caméras du panier au tableau envoyé à la requête "POST"
-            products.push(camera._id);
-            console.log(products);
 
             //Création du contenu du panier
             const boardCart = document.getElementById('board-cart');
 
             let productContentBox = document.createElement('div');
+            productContentBox.id = id;
             let productPictureBox = document.createElement('div');
             let productPicture = document.createElement('img');
             let productDescription = document.createElement('div');
@@ -75,6 +73,7 @@ const displayCart = async (cart) => {
             let buttonCutCartBox = document.createElement('div');
             let buttonCutCart = document.createElement('a');
             let buttonCutCartText = document.createElement('p');
+            let buttonCartIconBox = document.createElement('span');
             let buttonCutCartIcon = document.createElement('i');
 
             boardCart.appendChild(productContentBox);
@@ -86,8 +85,9 @@ const displayCart = async (cart) => {
             productContentBox.appendChild(buttonCutCartBox);
             buttonCutCartBox.appendChild(buttonCutCart);
             buttonCutCart.appendChild(buttonCutCartText);
-            buttonCutCart.appendChild(buttonCutCartIcon);
-        
+            buttonCutCart.appendChild(buttonCartIconBox);
+            buttonCartIconBox.appendChild(buttonCutCartIcon);
+
 
             productPicture.src = camera.imageUrl;
             productName.textContent = camera.name;
@@ -97,21 +97,23 @@ const displayCart = async (cart) => {
             productContentBox.setAttribute("class", "camera_contentboxcart row d-flex justify-content-between my-2");
             productPictureBox.setAttribute("class", "camera_pictureBox  col-4 px-0");
             productPicture.setAttribute("alt", "Photo de la caméra");
+            productPicture.setAttribute("class", "mb-0");
             productDescription.setAttribute("class", " camera_description d-flex flex-column justify-content-center");
             productName.setAttribute("class", "camera_name");
             productPrice.setAttribute("class", "camera_price");
-            buttonCutCartBox.setAttribute("class", "buttonCutCart2__box col-4");
-            buttonCutCart.setAttribute("class", "buttonCutCart2 btn");
-            buttonCutCartText.setAttribute("class", "buttonCutCartText d-inline");
-            buttonCutCartIcon.setAttribute("class", "fas fa-trash buttonCutCartIcon d-none");
-            
+            buttonCutCartBox.setAttribute("class", "buttonCutCart__box col-3 col-md-4");
+            buttonCutCart.setAttribute("class", "buttonCutCart btn");
+            buttonCutCartText.setAttribute("class", "buttonCutCartText");
+            buttonCartIconBox.setAttribute("class", "buttonCutCartIconBox");
+            buttonCutCartIcon.setAttribute("class", "fas fa-trash buttonCutCartIcon");
+
             //Fonction de retrait d'un article du panier
             const cutToCart = async () => {
                 cart = cart.filter((productId) => productId !== id);
                 localStorage.setItem("cart", JSON.stringify(cart));
                 console.log("Le produit a été retiré du panier");
                 console.log(cart);
-                
+
                 dataCameras = dataCameras.filter((c) => {
                     if (c.id === id) {
                         camera = c;
@@ -119,12 +121,14 @@ const displayCart = async (cart) => {
                     }
                     return true;
                 })
-                total -= camera.price / 100;
-                document.querySelector("#totalBox p").innerHTML = "Total de votre panier : " + total + "€";
-                
-                
-                //Supprimer le noeud de la camera supprimée
-                //location.reload();
+                if (total != 0) {
+                    total -= camera.price / 100;
+                    document.querySelector("#totalBox p").innerHTML = "Total de votre panier : " + total + "€";
+                }
+
+                var nodeCamera = document.getElementById(id);
+                nodeCamera.remove();
+
             }
 
             buttonCutCart.addEventListener("click", cutToCart);
@@ -156,66 +160,94 @@ const displayCart = async (cart) => {
 
 displayCart(cart);
 
+document.getElementById("firstName").addEventListener("change", (e) => {
+    e.target.setAttribute("class", "");
+});
+
+document.getElementById("lastName").addEventListener("change", (e) => {
+    e.target.setAttribute("class", "");
+});
+
+document.getElementById("address").addEventListener("change", (e) => {
+    e.target.setAttribute("class", "");
+});
+
+document.getElementById("city").addEventListener("change", (e) => {
+    e.target.setAttribute("class", "");
+});
+
+document.getElementById("email").addEventListener("change", (e) => {
+    e.target.setAttribute("class", "");
+});
+
+
 
 // fonction de validation du formulaire avant envoi
-const formValid = (contact) => {
+const formValid = () => {
 
     //validation prénom
     var regfirstName = new RegExp('^([a-zA-Zéëèïöü\ \-]+)$');
-    if (!(regfirstName.test(formOrder.firstName.value))) {
-        alert("Prénom invalide!");
-        return false;
+    let response = true;
+    if (!(regfirstName.test(document.getElementById("firstName").value))) {
+        document.getElementById("firstName").setAttribute("class", "invalidInput");
+        response = false;
     }
 
     //validation nom
     var regLastName = new RegExp('^([a-zA-Zéêëèïöü\ \-]+)$');
-    if (!(regLastName.test(formOrder.lastName.value))) {
-        alert("Nom invalide!");
-        return false;
+    if (!(regLastName.test(document.getElementById("lastName").value))) {
+        document.getElementById("lastName").setAttribute("class", "invalidInput");
+        response = false;
     }
 
     //validation adresse postale
-    var regAddress = new RegExp('^([a-z0-9A-Zêéëèïöü\ \-\']+)$');
-    if (!(regAddress.test(formOrder.address.value))) {
-        alert("Adresse invalide!");
-        return false;
+    var regAddress = new RegExp('^([a-z0-9A-Zêéëèïöü\ \-\'\,]+)$');
+    if (!(regAddress.test(document.getElementById("address").value))) {
+        document.getElementById("address").setAttribute("class", "invalidInput");
+        response = false;
     }
 
     //validation ville
     var regVille = new RegExp('^([a-zA-Zéëêèïöü\ \-\']+)$');
-    if (!(regVille.test(formOrder.city.value))) {
-        alert("Ville invalide!");
-        return false;
+    if (!(regVille.test(document.getElementById("city").value))) {
+        document.getElementById("city").setAttribute("class", "invalidInput");
+        response = false;
     }
 
     //validation adresse email
-    var regEmail = new RegExp('^[0-9a-z._-]+@[0-9a-z.-]{2,}.[a-z]{2,5}$', 'i');
-    if (!(regEmail.test(formOrder.email.value))) {
-        alert("Adresse email invalide!");
-        return false;
+    var regEmail = new RegExp(/^[0-9a-z\._\-]+@[0-9a-z\.\-]{2,}\.[a-z]{2,3}$/, 'i');
+    if (!(regEmail.test(document.getElementById("email").value))) {
+        document.getElementById("email").setAttribute("class", "invalidInput");
+        response = false;
     }
-    return true;
+    return response;
+
 }
 
-//Fonction d'envoie de la commande au serveur
+//Fonction d'envoi de la commande au serveur
 const pushOrder = async (data) => {
 
     fetch("http://localhost:3000/api/cameras/order", {
-        method: "POST",
-        body: data,
         headers: {
-            "Content-Type": "application/JSON",
+            "Content-Type": "application/json",
         },
-    })
-    .then(function (httpBodyResponse) {
-        if (httpBodyResponse.status === 404) {
-            throw new Error;
-        }
-        window.location = "/order.html?n=" & httpBodyResponse.response.order & order_id;
-    })
+        method: "POST",
+        body: JSON.stringify(data),
+
+    }).then((response) => response.json())
+
+        .then(function (httpBodyResponse) {
+            if (httpBodyResponse.status === 404) {
+                throw new Error;
+            }
+            console.log(httpBodyResponse);
+
+            window.location = "./order.html?orderId=" + httpBodyResponse.orderId + "&total=" + dataCameras.reduce((price, camera) => price + camera.price / 100, 0);
+
+        })
 
         .catch(function (error) {
-
+            console.log(error);
             (Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -224,24 +256,42 @@ const pushOrder = async (data) => {
             return undefined;
         })
 
+
+
 }
 
-const submitOrder = () => {
+const submitOrder = async () => {
+    if (cart.length === 0){
+        (Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: "Votre panier est vide !",
+            confirmButtonText: "Retour à la page d'accueil", 
+        }) .then(function() {
+            window.location = "index.html";
+        }));
+
+        return false
+    }
     let data = {
         products: cart,
         contact: {},
     }
-    data.contact.firstName = document.formOrder.firstName;
-    data.contact.lastName = document.formOrder.lastName;
-    data.contact.address = document.formOrder.address;
-    data.contact.ville = document.formOrder.city;
-    data.contact.email = document.formOrder.email;
+    data.contact.firstName = document.formOrder.firstName.value;
+    data.contact.lastName = document.formOrder.lastName.value;
+    data.contact.address = document.formOrder.address.value;
+    data.contact.city = document.formOrder.city.value;
+    data.contact.email = document.formOrder.email.value;
 
+    console.log(data);
     //Valider le forrmulaire
-  //  if (formValid(contact)){
-    //    pushOrder(data);
-   // }
+    if (formValid(contact)) {
+        console.log("ok")
+        pushOrder(data);
+      }
 }
+
 
 let startOrder = document.getElementById('startOrder');
 startOrder.addEventListener("click", submitOrder);
+

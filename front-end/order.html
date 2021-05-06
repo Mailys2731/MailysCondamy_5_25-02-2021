@@ -32,16 +32,6 @@
 
         <nav class="header__navbar row navbar navbar-expand-xl navbar-dark">
             <a class="header__logo col navbar-brand" href="index.html">Orinoco Cameras</a>
-
-            <a class="header__panni col-2 col-md-1 nav-link" href="cart.html">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#ffffff" class="bi bi-basket"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
-                    </svg>
-                </div>
-            </a>
         </nav>
 
     </header>
@@ -49,7 +39,15 @@
 <main>
     <section id="orderCongrate">
         <h1>Félicitations !</h1>
-        <h2>Votre commande a été passée avec succès</h2>
+        <h2 class="orderOk">Votre commande a été passée avec succès.</h2>
+        <div id="displayOrder">
+        <p id="orderId"></p>
+        <p id="totalOrder"></p>
+        </div>
+        <h3 class="thanks">Orinoco Cameras vous remercie pour votre achat !</h3>
+        <div id="linkReturn">
+            <a href= "index.html"> <i class="fas fa-sign-out-alt"></i> Retour à la page d'accueil</a>
+        </div>
     </section>
 </main>
 
@@ -58,7 +56,7 @@
             <p class="text-white my-4">Mentions légales</p>
         </div>
     </footer>
-
+    <script type="text/javascript" src="/front-end/js/order.js"></script>
 </body>
 
 </html>

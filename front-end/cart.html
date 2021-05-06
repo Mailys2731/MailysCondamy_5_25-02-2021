@@ -38,10 +38,10 @@
 
     <main class="container d-flex flex-column align-items-center">
 
-        <h1 class="titleCart">Récapitulatif de votre panier d'achat:</h1>
+        
 
         <section id="board" class="row">
-
+            <h1 class="titleCart w-100 text-center">Récapitulatif de votre panier d'achat:</h1>
             <div id="panierVide_box" class="panierVide col-12 d-flex justify-content-center">
                 <p id="panierVide" class="d-none"><i class="fas fa-window-close iconVide"></i> Votre panier est vide</p>
             </div>
@@ -52,28 +52,24 @@
             <div id="totalBox"></div>
         </section>
 
-      
-
-        </div>
-
         <div class="buttonContinue">
             <a class="btn" href="index.html"> Continuer mes achats </a>
         </div>
 
-        <section id="form" class="row">
+        <div id="form" class="row">
             <form name="formOrder" class="d-flex flex-column justify-content-center col-11 mx-auto">
 
                 <label for="firstName">Prénom:</label>
-                <input type="text" name="firstName" required maxlength="20">
+                <input type="text" name="firstName" id="firstName" required maxlength="20">
 
                 <label for="lastName">Nom:</label>
-                <input type="text" name="lastName" required maxlength="30">
+                <input type="text" name="lastName" id="lastName" required maxlength="30">
 
                 <label for="address">Adresse:</label>
-                <input type="text" name="address" required maxlength="100">
+                <input type="text" name="address" id="address" required maxlength="100">
 
                 <label for="city">Ville:</label>
-                <input type="text" name="city" required>
+                <input type="text" name="city" id="city" required>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -82,7 +78,7 @@
                     <button class="buttonOrder btn text-white" id="startOrder" type="button">Commander</button>
                 </div>
             </form>
-        </section>
+        </div>
     </main>
 
     <footer>
@@ -91,7 +87,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="/front-end/js/cart.js"></script>
+    <script src="/front-end/js/cart.js"></script>
 </body>
 
 </html>

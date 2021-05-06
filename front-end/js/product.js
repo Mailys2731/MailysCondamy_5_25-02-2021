@@ -30,12 +30,9 @@ const getCamera = (id) => {
 //Récupération de l'id
 const getId = () => {
     const queryString = window.location.search;
-
     const urlParams = new URLSearchParams(queryString);
-
     const id = urlParams.get('id');
     console.log(id);
-
     return id;
 }
 
@@ -83,7 +80,10 @@ if (!cart) {
 const addToCart = async () => {
 
     if (cart.includes(id)) {
-        alert('Article déjà ajouté !')
+        (Swal.fire({
+            icon: 'info',
+            text: 'Cet article a déja été ajouté à votre panier !',
+        }))
         return false;
     }
     cart.push(id);
@@ -97,33 +97,12 @@ const addToCart = async () => {
     console.log(localStorage.getItem("cart"));
 }
 
+//
 
-const cutToCart = async () => {
-
-    //localStorage.removeItem("cart");
-    cart = cart.filter((productId) => productId !== id)
-    localStorage.setItem("cart", JSON.stringify(cart));
-    console.log("Le produit a été retiré du panier");
-    (Swal.fire({
-        icon: 'success',
-        text: 'L"article a été retiré de votre panier',
-    }));
-    console.log(cart);
  
-}
 
 
 let buy = document.getElementById('addToCart');
 buy.addEventListener("click", addToCart);
 
-let cut = document.getElementById('cutToCart');
-cut.addEventListener("click", cutToCart);
 
-
-/*
-console.log("Le produit a été retiré du panier");
-(Swal.fire({
-    icon: 'success',
-    text: 'L"article a été retiré de votre panier',
-}));
-*/

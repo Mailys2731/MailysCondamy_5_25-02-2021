@@ -1,11 +1,15 @@
 
-main{
+body{
+    min-width: 360px;
+}
 
+main{
     font-family: 'Montserrat', sans-serif;
 }
 
 img{
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .h1_index{
@@ -38,6 +42,7 @@ img{
 .camera_content{
     margin: 1rem;
     border: solid 1px $pink;
+    padding-bottom: 0.5rem;
 }
 
 .camera_description{
@@ -59,6 +64,7 @@ img{
 
 .buttonAddCart__box {
     @include button-principal;
+    margin-bottom: 1.5rem;
 }
 
 .buttonCutCart__box{
@@ -71,11 +77,12 @@ img{
 
 .buttonOrder__box{
     @include button-principal;
+    margin-top: 1.5rem;
 }
 
 //cart
 
-.buttonCutCart2__box{
+.buttonCutCart__box{
     @include button-principal;
     background-color: $pink;
     color:white;
@@ -84,10 +91,6 @@ img{
         margin-bottom:0px;
     }  
 }
-
-
-
-
 
 #board{
 max-width:100%;
@@ -121,7 +124,9 @@ justify-content: flex-end;
 }
 
 
-@media screen and (max-width:750px) {
+
+
+@media screen and (max-width:765px) {
 
     .titleCart{
         font-size: 1.5rem;
@@ -130,31 +135,38 @@ justify-content: flex-end;
     .buttonCutCart2_box{
        max-width: min-content;
     }
+
     .buttonCutCartText{
         display: none;
     }
+
+    .buttonCutCartIcon{
+        display: inline-block;
+    }
+      
     
 }
 
+@media screen and (min-width:765px){
 
-
-@media screen and (min-width:750px){
-
-        #board{
-            width: 75%;
-            display: flex;
-            align-items: center;
-        }
-
-        .camera_name{
-            font-size: 1.5rem;
-        }
-
-        .buttonCutCartIcon{
-            display:none;
-        }
+    #board{
+        width: 75%;
+        display: flex;
+        align-items: center;
     }
 
+    .camera_name{
+        font-size: 1.5rem;
+        }
+
+   
+        .buttonCutCartIconBox{
+            display: none;
+        }
+        
+
+    
+}
 
 
 .displayTotal{
@@ -168,28 +180,54 @@ justify-content: flex-end;
     margin-top:2rem;
 }
 
-input:invalid {
-    border: 1px solid $pink;
+.invalidInput {
+    border: 3px solid $pink;
 }
   
-input:valid {
-    border: 1px solid $green;
-}
-
-
-//footer
-.footer{
-    background-color: $darkgreen;
-    height:10rem;
-    margin-top:4rem;
-}
-
 //Order
 
 #orderCongrate{
     display: flex;
     flex-direction:column;
     align-items: center;
-    margin:4rem;
+    margin:2rem;
 
+}
+
+#displayOrder{
+    padding: 1.5rem;
+    margin:2rem;
+    border-radius:0.5rem;
+    border:3px solid $green;
+}
+
+#linkReturn a{
+    color:$pink;
+    text-decoration: none;
+    font-size: 1rem;
+
+    & :hover{
+        font-size: 1rem;
+    }
+}
+
+.thanks{
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 765px) {
+    .orderOk{
+        font-size:1.5rem;
+    }
+
+    .thanks{
+        font-size:1.5rem;
+    }
+}
+
+//footer
+.footer{
+    background-color: $darkgreen;
+    height:10rem;
+    margin-top:4rem;
 }

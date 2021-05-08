@@ -1,6 +1,4 @@
 
-
-
 //Récupération de l'ID de la commande et du total dans l'url
 const urlParams = window.location.search;
 const searchParams = new URLSearchParams(urlParams);

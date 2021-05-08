@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Orinoco</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+
+
+</head>
+
+<body class="bg-light">
+    <header class="header container">
+
+        <nav class="header__navbar row navbar navbar-expand-xl navbar-dark">
+            <a class="header__logo col navbar-brand" href="index.html">Orinoco Cameras</a>
+
+            <a class="header__panni col-2 col-md-1 nav-link" href="cart.html">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#ffffff" class="bi bi-basket"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
+                    </svg>
+                </div>
+            </a>
+        </nav>
+
+    </header>
+
+    <main id="main">
+
+        <div class="container d-flex justify-content-center">
+            <div id="cardContainer" class=" my-5 shadow">
+                <div id="detailCard__pictureBox">
+                    <img id="detailCard__picture" alt="Photo de la camera" src="#">
+                </div>
+                <div id="detailCard__descriptionBox" class="p-3">
+                    <h2 id="detailCard__name">Name</h2>
+                    <p id="detailCard__description" class="text-justify"></p>
+                    <p id="detailCard__price" class="font-weight-bold"></p>
+
+                    <label>Choisissez votre lentille:</label>
+                    <select name="option" id="choiceLenses">
+                        <option disabled value="" selected>lentilles</option>
+                    </select>
+                </div>
+                <div class="buttonAddCart__box">
+                    <button class="buttonCart btn text-white" id="addToCart">Ajouter au panier</button>
+                </div>
+               
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="footer d-flex justify-content-center ">
+            <p class="text-white my-4">Mentions légales</p>
+        </div>
+    </footer>
+    <script src="/front-end/js/product.js"></script>
+</body>
+
+</html>

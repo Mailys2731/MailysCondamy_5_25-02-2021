@@ -1,0 +1,233 @@
+
+body{
+    min-width: 360px;
+}
+
+main{
+    font-family: 'Montserrat', sans-serif;
+}
+
+img{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.h1_index{
+    font-size: 2.2rem;
+    margin-top:2rem;
+    text-align: center;
+    color:$darkgreen;
+}
+
+.h2_index{
+    font-size: 1.2rem;
+    text-align: center;
+    color: $darkgreen;
+    margin-top:1rem;
+
+}
+
+.header{
+    background-color:$darkgreen;
+    &__logo{
+        font-family: 'Merienda One', cursive;
+    }
+}
+
+#list-camera{
+    margin-top: 0px;
+}
+
+
+.camera_content{
+    margin: 1rem;
+    border: solid 1px $pink;
+    padding-bottom: 0.5rem;
+}
+
+.camera_description{
+    text-decoration: none;
+    
+}
+
+.camera_actionbox{
+    @include button-principal;
+
+}
+
+//product
+
+#cardContainer{
+    max-width: 30rem;
+    border: solid 1px $pink;
+}
+
+.buttonAddCart__box {
+    @include button-principal;
+    margin-bottom: 1.5rem;
+}
+
+.buttonCutCart__box{
+    @include button-principal;
+}
+
+.buttonContinue{
+    @include button-principal;
+}
+
+.buttonOrder__box{
+    @include button-principal;
+    margin-top: 1.5rem;
+}
+
+//cart
+
+.buttonCutCart__box{
+    @include button-principal;
+    background-color: $pink;
+    color:white;
+    align-self: flex-end;
+    & p {
+        margin-bottom:0px;
+    }  
+}
+
+#board{
+max-width:100%;
+justify-content: flex-end;
+}
+
+.titleCart{
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.camera_contentboxcart{
+    border: solid 1px $pink;
+}
+
+
+#panierVide{
+    font-size: 1.5rem;
+    border: 3px solid $darkgreen;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-right: 2rem;
+    padding-left:2rem;
+    padding-bottom: 1rem;;
+}
+
+.iconVide{
+    color: $pink;
+    font-size: 2rem;
+    margin-top:1rem;
+}
+
+
+
+
+@media screen and (max-width:765px) {
+
+    .titleCart{
+        font-size: 1.5rem;
+    }
+    
+    .buttonCutCart2_box{
+       max-width: min-content;
+    }
+
+    .buttonCutCartText{
+        display: none;
+    }
+
+    .buttonCutCartIcon{
+        display: inline-block;
+    }
+      
+    
+}
+
+@media screen and (min-width:765px){
+
+    #board{
+        width: 75%;
+        display: flex;
+        align-items: center;
+    }
+
+    .camera_name{
+        font-size: 1.5rem;
+        }
+
+   
+        .buttonCutCartIconBox{
+            display: none;
+        }
+        
+
+    
+}
+
+
+.displayTotal{
+    font-weight: bold;
+    font-size:1.2rem;
+}
+
+#form{
+    width:100%;
+    max-width: 50rem;
+    margin-top:2rem;
+}
+
+.invalidInput {
+    border: 3px solid $pink;
+}
+  
+//Order
+
+#orderCongrate{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin:2rem;
+
+}
+
+#displayOrder{
+    padding: 1.5rem;
+    margin:2rem;
+    border-radius:0.5rem;
+    border:3px solid $green;
+}
+
+#linkReturn a{
+    color:$pink;
+    text-decoration: none;
+    font-size: 1rem;
+
+    & :hover{
+        font-size: 1rem;
+    }
+}
+
+.thanks{
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 765px) {
+    .orderOk{
+        font-size:1.5rem;
+    }
+
+    .thanks{
+        font-size:1.5rem;
+    }
+}
+
+//footer
+.footer{
+    background-color: $darkgreen;
+    height:10rem;
+    margin-top:4rem;
+}

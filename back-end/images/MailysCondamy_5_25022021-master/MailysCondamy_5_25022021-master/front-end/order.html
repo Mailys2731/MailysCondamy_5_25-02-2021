@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Orinoco</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/977411349e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header container">
+
+        <nav class="header__navbar row navbar navbar-expand-xl navbar-dark">
+            <a class="header__logo col navbar-brand" href="index.html">Orinoco Cameras</a>
+        </nav>
+
+    </header>
+
+<main>
+    <section id="orderCongrate">
+        <h1>Félicitations !</h1>
+        <h2 class="orderOk">Votre commande a été passée avec succès.</h2>
+        <div id="displayOrder">
+        <p id="orderId"></p>
+        <p id="totalOrder"></p>
+        </div>
+        <h3 class="thanks">Orinoco Cameras vous remercie pour votre achat !</h3>
+        <div id="linkReturn">
+            <a href= "index.html"> <i class="fas fa-sign-out-alt"></i> Retour à la page d'accueil</a>
+        </div>
+    </section>
+</main>
+
+    <footer>
+        <div class="footer d-flex justify-content-center ">
+            <p class="text-white my-4">Mentions légales</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/front-end/js/order.js"></script>
+</body>
+
+</html>

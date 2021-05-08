@@ -38,7 +38,6 @@ if (!cart) {
 let products = [];
 let contact = {};
 
-
 //Tableau nécessaire au calcul du prix total
 let dataCameras = [];
 //Initialisation total
@@ -181,7 +180,6 @@ document.getElementById("city").addEventListener("change", (e) => {
 document.getElementById("email").addEventListener("change", (e) => {
     e.target.setAttribute("class", "");
 });
-
 
 
 // fonction de validation du formulaire avant envoi

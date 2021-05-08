@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Orinoco</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/977411349e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header container">
+
+        <nav class="header__navbar row navbar navbar-expand-xl navbar-dark">
+            <a class="header__logo col navbar-brand" href="index.html">Orinoco Cameras</a>
+        </nav>
+
+    </header>
+
+    <main class="container d-flex flex-column align-items-center">
+
+        
+
+        <section id="board" class="row">
+            <h1 class="titleCart w-100 text-center">Récapitulatif de votre panier d'achat:</h1>
+            <div id="panierVide_box" class="panierVide col-12 d-flex justify-content-center">
+                <p id="panierVide" class="d-none"><i class="fas fa-window-close iconVide"></i> Votre panier est vide</p>
+            </div>
+
+            <div id="board-cart">
+            </div>
+
+            <div id="totalBox"></div>
+        </section>
+
+        <div class="buttonContinue">
+            <a class="btn" href="index.html"> Continuer mes achats </a>
+        </div>
+
+        <div id="form" class="row">
+            <form name="formOrder" class="d-flex flex-column justify-content-center col-11 mx-auto">
+
+                <label for="firstName">Prénom:</label>
+                <input type="text" name="firstName" id="firstName" required maxlength="20">
+
+                <label for="lastName">Nom:</label>
+                <input type="text" name="lastName" id="lastName" required maxlength="30">
+
+                <label for="address">Adresse:</label>
+                <input type="text" name="address" id="address" required maxlength="100">
+
+                <label for="city">Ville:</label>
+                <input type="text" name="city" id="city" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="buttonOrder__box  col-11 mx-auto">
+                    <button class="buttonOrder btn text-white" id="startOrder" type="button">Commander</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer d-flex justify-content-center ">
+            <p class="text-white my-4">Mentions légales</p>
+        </div>
+    </footer>
+
+    <script src="/front-end/js/cart.js"></script>
+</body>
+
+</html>

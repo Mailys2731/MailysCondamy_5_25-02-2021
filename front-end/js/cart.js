@@ -38,11 +38,6 @@ if (!cart) {
 let products = [];
 let contact = {};
 
-//Objet envoyé lors de la requête "POST"
-let order = {
-    contact,
-    products
-}
 
 //Tableau nécessaire au calcul du prix total
 let dataCameras = [];

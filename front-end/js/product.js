@@ -17,7 +17,6 @@ const getCamera = (id) => {
 
         //gestion des erreurs
         .catch(function (error) {
-
             (Swal.fire({
                 icon: 'error',
                 title: 'Erreur connection serveur',
@@ -97,9 +96,6 @@ const addToCart = async () => {
     console.log(localStorage.getItem("cart"));
 }
 
-//
-
- 
 
 
 let buy = document.getElementById('addToCart');

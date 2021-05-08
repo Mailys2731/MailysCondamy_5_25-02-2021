@@ -27,7 +27,7 @@ const getCameras = async() => {
 
 
 
-const displayCamera = async(camera) => {
+const displayCamera = async() => {
 
     //récupération des données de l'API
     const cameras = await getCameras();
@@ -35,8 +35,7 @@ const displayCamera = async(camera) => {
 
     //Boucle créant autant de cartes produits que de caméras dans présentes dans l'API
     cameras.forEach((camera) => {
-
-
+ 
         //Lien avec la page HTML
         const listCamera = document.getElementById('list-camera');
 

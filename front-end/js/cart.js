@@ -21,8 +21,8 @@ const getCamera = (id) => {
 
             (Swal.fire({
                 icon: 'error',
-                title: 'Oops...',
-                text: "Quelque chose c'est mal passé !",
+                title: 'Erreur connection serveur',
+                text: "Il semble qu'Orinoco rencontre un problème, merci de revenir plus tard",
             }))
             return undefined;
         })

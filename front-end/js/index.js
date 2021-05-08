@@ -16,8 +16,8 @@ const getCameras = async() => {
         .catch(function (error) {
             (Swal.fire({
                 icon: 'error',
-                title: 'Oops...',
-                text: "Une erreur interne s'est produite !",
+                title: 'Erreur connection serveur',
+                text: "Il semble qu'Orinoco rencontre un problème, merci de revenir plus tard",
                 type: "success",
 
             }))

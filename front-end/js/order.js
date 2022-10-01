@@ -10,7 +10,7 @@ const totalOrder = searchParams.get('total');
 console.log(totalOrder);
 
 if (!orderId || !totalOrder){
-    window.location = "index.html";
+    window.location = "../../index.html";
 }
 
 //Affichage de l'ID de la commande

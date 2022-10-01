@@ -268,7 +268,7 @@ const submitOrder = async () => {
             text: "Votre panier est vide !",
             confirmButtonText: "Retourner à la page d'accueil",
         }).then(function () {
-            window.location = "index.html";
+            window.location = "../index.html";
         }));
 
         return false

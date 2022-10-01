@@ -70,7 +70,7 @@ const displayCamera = async() => {
         cameraName.setAttribute("class", "camera_name card-title");
         cameraPrice.setAttribute("class", "cameraPrice card-text");
         cameraActionBox.setAttribute("class", "camera_actionbox button-effect");
-        cameraAction.setAttribute("href", "product.html?id=" + camera._id);
+        cameraAction.setAttribute("href", "/front-end/product.html?id=" + camera._id);
         cameraAction.setAttribute("class", "camera_action btn");
 
         //Contenu interractif des balises
